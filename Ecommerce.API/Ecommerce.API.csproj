@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <Compile Remove="pti7\**" />
+    <Compile Remove="shopname\**" />
+    <Content Remove="pti7\**" />
+    <Content Remove="shopname\**" />
+    <EmbeddedResource Remove="pti7\**" />
+    <EmbeddedResource Remove="shopname\**" />
+    <None Remove="pti7\**" />
+    <None Remove="shopname\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="0params.txt" />
+    <None Remove="params.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ecommerce.Contracts\Ecommerce.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
